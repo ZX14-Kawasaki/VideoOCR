@@ -5,7 +5,7 @@ import numpy as np  # Image Processing
 
 st.title("OCR - Optical Character Recognition")
 
-add_selectbox = st.selectbox('Select language i  Image',('Japanese', 'Portuguese', 'Spanish'))
+add_selectbox = st.selectbox('Select language in Image',('Japanese', 'Portuguese', 'Spanish'))
 
 lang = 'ja'
 if (add_selectbox == 'Japanese'): 
