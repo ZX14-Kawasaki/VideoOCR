@@ -6,15 +6,13 @@ import numpy as np  # Image Processing
 st.title("OCR - Optical Character Recognition")
 
 add_selectbox = st.selectbox(
-    'Select a Language',
-    ('Japanese', 'English', 'Portuguese', 'Spanish')
+    'Select language i  Image',
+    ('Japanese', 'Portuguese', 'Spanish')
 )
 
 lang = 'ja'
 if (add_selectbox == 'Japanese'): 
     lang = 'ja'
-if (add_selectbox == 'English'): 
-    lang = 'en'
 if (add_selectbox == 'Portuguese'): 
     lang = 'pt'
 if (add_selectbox == 'Spanish'): 
@@ -24,7 +22,7 @@ image = st.file_uploader(label="Upload your image file", type=['png', 'jpg', 'jp
 
 @st.cache
 def load_model():
-    rdr = ocr.Reader([lang])
+    rdr = ocr.Reader([lang, 'en'])
     return rdr
 
 reader = load_model()  # load model
