@@ -7,12 +7,14 @@ st.title("OCR - Optical Character Recognition")
 
 add_selectbox = st.selectbox(
     'Select a Language',
-    ('Japanese', 'Portuguese', 'Spanish')
+    ('Japanese', 'English', 'Portuguese', 'Spanish')
 )
 
 lang = 'ja'
 if (add_selectbox == 'Japanese'): 
     lang = 'ja'
+if (add_selectbox == 'English'): 
+    lang = 'en'
 if (add_selectbox == 'Portuguese'): 
     lang = 'pt'
 if (add_selectbox == 'Spanish'): 
@@ -22,7 +24,7 @@ image = st.file_uploader(label="Upload your image file", type=['png', 'jpg', 'jp
 
 @st.cache
 def load_model():
-    rdr = ocr.Reader([lang, 'en'])
+    rdr = ocr.Reader([lang])
     return rdr
 
 reader = load_model()  # load model
