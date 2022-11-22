@@ -29,7 +29,7 @@ if image is not None:
 
     with st.spinner("Processing ..."):
         result = reader.readtext(np.array(input_image))
-        st.success("Results"icon="✅")
+        st.success("Results",icon="✅")
         for (bbox, text, prob) in result:
             st.write(text)
             
