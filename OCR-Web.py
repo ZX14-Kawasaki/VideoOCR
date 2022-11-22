@@ -3,8 +3,8 @@ import streamlit as st  # Web App
 from PIL import Image  # Image Processing
 import numpy as np  # Image Processing
 
-st.title("OCR - Optical Character Recognition")
-st.subheader("by Okinawa Genealogical Society of Hawaii")
+st.header("OCR - Optical Character Recognition")
+st.subheader("Okinawa Genealogical Society of Hawaii")
 add_selectbox = st.selectbox('Select language in Image File',('Japanese', 'Portuguese', 'Spanish'))
 
 lang = 'ja'
