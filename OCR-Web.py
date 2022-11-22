@@ -12,8 +12,8 @@ add_selectbox = st.selectbox(
 
 if (add_selectbox == 'Japanese'): 
     lang = 'ja'
-if (add_selectbox == 'Portuguese'): 
-    lang = 'po'
+#if (add_selectbox == 'Portuguese'): 
+#    lang = 'po'
 
 image = st.file_uploader(label="Upload your Kanji Image file", type=['png', 'jpg', 'jpeg'])
 
