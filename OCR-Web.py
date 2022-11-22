@@ -11,7 +11,7 @@ image = st.file_uploader(label="Upload your image here", type=['png', 'jpg', 'jp
 
 @st.cache
 def load_model():
-    rdr = ocr.Reader(['ja', 'en'], model_storage_directory='/models')
+    rdr = ocr.Reader(['ja', 'en'])
     return rdr
 
 reader = load_model()  # load model
@@ -22,6 +22,7 @@ if image is not None:
 
     with st.spinner("Processing ..."):
         result = reader.readtext(np.array(input_image))
+        st.success("Results")
         for (bbox, text, prob) in result:
             st.write(text)
 
