@@ -7,7 +7,7 @@ import numpy as np  # Image Processing
 
 st.title("Kanji-English Optical Character Recognition")
 
-image = st.file_uploader(label="Upload your image here", type=['png', 'jpg', 'jpeg'])
+image = st.file_uploader(label="Upload your Kanji Image file", type=['png', 'jpg', 'jpeg'])
 
 @st.cache
 def load_model():
