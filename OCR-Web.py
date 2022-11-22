@@ -3,13 +3,14 @@ import streamlit as st  # Web App
 from PIL import Image  # Image Processing
 import numpy as np  # Image Processing
 
-st.title("Kanji Optical Character Recognition")
+st.title("OCR - Optical Character Recognition")
 
 add_selectbox = st.selectbox(
     'Select a Language',
     ('Japanese', 'Portuguese', 'Spanish')
 )
 
+lang = 'ja'
 if (add_selectbox == 'Japanese'): 
     lang = 'ja'
 if (add_selectbox == 'Portuguese'): 
@@ -39,6 +40,6 @@ if image is not None:
     st.image(input_image)  # display image
 
     st.success("Done!")
-else:
-    st.write("Upload an Image")
+#else:
+#    st.write("Upload an Image")
 
