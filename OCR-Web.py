@@ -4,8 +4,8 @@ from PIL import Image  # Image Processing
 import numpy as np  # Image Processing
 
 st.title("OCR - Optical Character Recognition")
-
-add_selectbox = st.selectbox('Select language in Image',('Japanese', 'Portuguese', 'Spanish'))
+st.subheader("by Okinawa Genealogical Society of Hawaii")
+add_selectbox = st.selectbox('Select language in Image File',('Japanese', 'Portuguese', 'Spanish'))
 
 lang = 'ja'
 if (add_selectbox == 'Japanese'): 
@@ -15,7 +15,7 @@ elif (add_selectbox == 'Portuguese'):
 elif (add_selectbox == 'Spanish'): 
     lang = 'es'
     
-image = st.file_uploader(label="Upload your image file", type=['png', 'jpg', 'jpeg'])
+image = st.file_uploader(label="Upload your Image File", type=['png', 'jpg', 'jpeg'])
 
 @st.cache
 def load_model():
