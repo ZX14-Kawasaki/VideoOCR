@@ -5,10 +5,10 @@ import numpy as np  # Image Processing
 
 st.title("Kanji Optical Character Recognition")
 
-#add_selectbox = st.sidebar.selectbox(
-#    'How would you like to be contacted?',
-#    ('Email', 'Home phone', 'Mobile phone')
-#)
+add_selectbox = st.selectbox(
+    'How would you like to be contacted?',
+    ('Email', 'Home phone', 'Mobile phone')
+)
 
 image = st.file_uploader(label="Upload your Kanji Image file", type=['png', 'jpg', 'jpeg'])
 
