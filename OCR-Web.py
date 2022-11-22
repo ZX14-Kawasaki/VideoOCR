@@ -23,7 +23,7 @@ if image is not None:
         for (bbox, text, prob) in result:
             st.write(text)
             
-    st.success("Image)
+    st.success("Image")
     st.image(input_image)  # display image
 
     st.success("Done!")
