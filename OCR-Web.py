@@ -9,12 +9,16 @@ add_selectbox = st.selectbox(
     'Select a Language',
     ('Japanese', 'Portuguese', 'Spanish')
 )
-st.write(add_selectbox)
+if (add_selectbox == 'Japanese') 
+    lang = 'ja'
+else if (add_selectbox == 'Portuguese') 
+    lang = 'pt'
+
 image = st.file_uploader(label="Upload your Kanji Image file", type=['png', 'jpg', 'jpeg'])
 
 @st.cache
 def load_model():
-    rdr = ocr.Reader(['ja', 'en'])
+    rdr = ocr.Reader([lang, 'en'])
     return rdr
 
 reader = load_model()  # load model
