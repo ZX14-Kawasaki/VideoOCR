@@ -25,7 +25,7 @@ def load_model():
     rdr = ocr.Reader([lang, 'en'])
     return rdr
 
-reader = load_model()  # load model
+reader = load_model()  
 
 if image is not None:
     input_image = Image.open(image)  # read image
@@ -36,10 +36,10 @@ if image is not None:
         for (bbox, text, prob) in result:
             st.write(text)
             
-    st.success("Image")
+    st.success("Image File")
     st.image(input_image)  # display image
 
-    st.success("Done!")
+#    st.success("Done!")
 #else:
 #    st.write("Upload an Image")
 
