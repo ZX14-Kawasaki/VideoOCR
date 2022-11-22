@@ -3,7 +3,7 @@ import streamlit as st  # Web App
 from PIL import Image  # Image Processing
 import numpy as np  # Image Processing
 
-st.header("OCR - Optical Character Recognition")
+st.subheader("OCR - Optical Character Recognition")
 st.caption("Created by the Okinawan Genealogical Society of Hawaii")
 add_selectbox = st.selectbox('Select language in Image File',('Japanese', 'Portuguese', 'Spanish'))
 
@@ -33,6 +33,6 @@ if image is not None:
         for (bbox, text, prob) in result:
             st.write(text)
             
-    st.success("Image File")
+    st.success("Image File",icon="✅")
     st.image(input_image)           # display image
 
