@@ -1,9 +1,3 @@
-<<<<<<< HEAD
-numpy
-streamlit==1.12.2
-Pillow
-=======
 numpy
 Pillow
->>>>>>> origin/master
 easyocr
