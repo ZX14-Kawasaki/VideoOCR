@@ -18,7 +18,7 @@ if (add_selectbox == 'Portuguese'):
 if (add_selectbox == 'Spanish'): 
     lang = 'es'
     
-image = st.file_uploader(label="Upload your Kanji Image file", type=['png', 'jpg', 'jpeg'])
+image = st.file_uploader(label="Upload your image file", type=['png', 'jpg', 'jpeg'])
 
 @st.cache
 def load_model():
