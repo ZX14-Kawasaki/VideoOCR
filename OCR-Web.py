@@ -5,7 +5,7 @@ import numpy as np  # Image Processing
 
 #Compile and Open Terminal at bottom run in Chrome
 
-st.title("Kanji-English Optical Character Recognition")
+st.title("Kanji Optical Character Recognition")
 
 image = st.file_uploader(label="Upload your Kanji Image file", type=['png', 'jpg', 'jpeg'])
 
