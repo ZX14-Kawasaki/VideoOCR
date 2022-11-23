@@ -3,9 +3,9 @@ import streamlit as st  # Web App
 from PIL import Image  # Image Processing
 import numpy as np  # Image Processing
 
-st.title("OCR - Optical Character Recognition")
-
-add_selectbox = st.selectbox('Select language i  Image',('Japanese', 'Portuguese', 'Spanish'))
+st.subheader("OCR - Optical Character Recognition")
+st.caption("Created by the Okinawan Genealogical Society of Hawaii")
+add_selectbox = st.selectbox('Select language in Image File',('Japanese', 'Portuguese', 'Spanish'))
 
 lang = 'ja'
 if (add_selectbox == 'Japanese'): 
@@ -15,7 +15,7 @@ elif (add_selectbox == 'Portuguese'):
 elif (add_selectbox == 'Spanish'): 
     lang = 'es'
     
-image = st.file_uploader(label="Upload your image file", type=['png', 'jpg', 'jpeg'])
+image = st.file_uploader(label="Upload your Image File", type=['png', 'jpg', 'jpeg'])
 
 @st.cache
 def load_model():
@@ -29,10 +29,21 @@ if image is not None:
 
     with st.spinner("Processing ..."):
         result = reader.readtext(np.array(input_image))
-        st.success("Results")
+        cnt = 0
+        tot = 0
+        for (bbox, text, prob) in result:
+            cnt = cnt + 1
+            tot = tot + prob
+        tot = tot / cnt   
+        
+        if (tot >= .75):
+            st.success("Results",icon="👍")
+        else:
+            st.success("Results",icon="👎")
+            
         for (bbox, text, prob) in result:
             st.write(text)
             
-    st.success("Image File")
+    st.success("Image File",icon="👇")
     st.image(input_image)           # display image
 
