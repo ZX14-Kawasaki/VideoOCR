@@ -29,10 +29,20 @@ if image is not None:
 
     with st.spinner("Processing ..."):
         result = reader.readtext(np.array(input_image))
-        st.success("Results",icon="👍")
+        cnt = 0
+        tot = 0
+        for (bbox, text, prob) in result:
+            cnt = cnt + 1
+            tot = tot + prob
+        tot = prob / cnt   
+        
+        if (tot >= .75):
+            st.success("Results",icon="👍")
+        else:
+            st.success("Results",icon="👎")
+            
         for (bbox, text, prob) in result:
             st.write(text)
-    #👎       
     st.success("Image File",icon="👇")
     st.image(input_image)           # display image
 
