@@ -28,6 +28,8 @@ reader = load_model()
 if image is not None:
     input_image = Image.open(image)  # read image
     input_image = np.array(input_image)
+    dimensions = input_image.shape
+    st.write(dimensions)
 
     with st.spinner("Processing ..."):
         result = reader.readtext(input_image)
@@ -53,7 +55,7 @@ if image is not None:
             bl = (int(bl[0]), int(bl[1]))
 
             input_image = cv2.rectangle(input_image, tl, br, (0, 0, 0), 2)
-            input_image = cv2.putText(input_image, str(cnt), tr, cv2.FONT_HERSHEY_SIMPLEX, 1.5, (0, 0, 0), 2, cv2.LINE_AA)
+            input_image = cv2.putText(input_image, str(cnt), tr, cv2.FONT_HERSHEY_SIMPLEX, 1.0, (0, 0, 0), 2, cv2.LINE_AA)
     st.success("Image File", icon="👇")
 
     st.image(input_image)           # display image
