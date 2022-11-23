@@ -28,8 +28,8 @@ reader = load_model()
 if image is not None:
     input_image = Image.open(image)  # read image
     input_image = np.array(input_image)
-    dimensions = input_image.shape
-    st.write(dimensions)
+    #dimensions = input_image.shape
+    #st.write(dimensions)
 
     with st.spinner("Processing ..."):
         result = reader.readtext(input_image)
