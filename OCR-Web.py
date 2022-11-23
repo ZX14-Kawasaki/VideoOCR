@@ -35,8 +35,8 @@ if image is not None:
             cnt = cnt + 1
             tot = tot + prob
             st.write(text)
-        tot = prob / cnt   
-        st.write(tot)
+        tot = tot / cnt   
+        
         if (tot >= .75):
             st.success("Results",icon="👍")
         else:
