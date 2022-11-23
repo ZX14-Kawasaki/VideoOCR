@@ -34,13 +34,14 @@ if image is not None:
         for (bbox, text, prob) in result:
             cnt = cnt + 1
             tot = tot + prob
-            st.write(text)
         tot = tot / cnt   
         
         if (tot >= .75):
             st.success("Results",icon="👍")
         else:
             st.success("Results",icon="👎")
+        for (bbox, text, prob) in result:
+            st.write(text)
             
     st.success("Image File",icon="👇")
     st.image(input_image)           # display image
