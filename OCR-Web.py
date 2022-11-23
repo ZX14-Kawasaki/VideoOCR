@@ -41,8 +41,8 @@ if image is not None:
         else:
             st.success("Results",icon="👎")
             
-        #for (bbox, text, prob) in result:
-        #    st.write(text)
+        for (bbox, text, prob) in result:
+            st.write(text)
             
     st.success("Image File",icon="👇")
     st.image(input_image)           # display image
