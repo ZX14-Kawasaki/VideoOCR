@@ -32,7 +32,7 @@ if image is not None:
     #st.write(dimensions)
 
     with st.spinner("Processing ..."):
-        result = reader.readtext(input_image, width_ths=0, height_ths=0)
+        result = reader.readtext(input_image, width_ths=0, height_ths=0, width_ths=2)
         cnt = 0
         tot = 0
         for (bbox, text, prob) in result:
