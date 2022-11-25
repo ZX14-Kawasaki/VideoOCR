@@ -4,7 +4,7 @@ from PIL import Image  # Image Processing
 import numpy as np  # Image Processing
 import cv2
 
-st.subheader("OCR - Optical Character Recognition")
+st.subheader("Image to Text Conversion")
 st.caption("Created by the Okinawan Genealogical Society of Hawaii")
 add_selectbox = st.selectbox('Select language in Image File',('Japanese', 'Portuguese', 'Spanish'))
 
