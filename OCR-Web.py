@@ -46,10 +46,10 @@ if image is not None:
             tot = tot + prob
         tot = tot / cnt   
         
-        #if (tot >= .75):
-        #    col1.success("Results", icon="👍")
-        #else:
-        #    col1.success("Results", icon="👎")
+        if (tot >= .75):
+            col1.success("Results", icon="👍")
+        else:
+            col1.success("Results", icon="👎")
         cnt = 0
         for (bbox, text, prob) in result:
             cnt = cnt + 1
@@ -63,6 +63,6 @@ if image is not None:
             input_image = cv2.rectangle(input_image, tl, br, (0, 255, 0), 1)
             input_image = cv2.putText(input_image, str(cnt), tr, cv2.FONT_HERSHEY_SIMPLEX, 0.5, (0, 255, 0), 2, cv2.LINE_AA)
             
-    st.sidebar.success("Image File", icon="👇")
+    col2.success("Image File", icon="👇")
 
     col2.image(input_image)           # display image
