@@ -62,7 +62,7 @@ if image is not None:
             bl = (int(bl[0]), int(bl[1]))
 
             input_image = cv2.rectangle(input_image, tl, br, (0, 255, 0), 1)
-            input_image = cv2.putText(input_image, str(cnt), tr, cv2.FONT_HERSHEY_SIMPLEX, 0.5, (0, 255, 0), 2, cv2.LINE_AA)
+            input_image = cv2.putText(input_image, str(cnt), tr, cv2.FONT_HERSHEY_SIMPLEX, 0.6, (0, 255, 0), 2, cv2.LINE_AA)
             
     col2.success("Processed Image File", icon="👇")
 
