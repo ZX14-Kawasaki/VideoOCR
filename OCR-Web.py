@@ -35,7 +35,7 @@ if image is not None:
     #st.sidebar.image(input_image)           # display image
     
     dimensions = input_image.shape
-    fld = "Image Size " + dimensions
+    fld = "Image Size " + str(dimensions)
     st.sidebar.write(fld)
 
     with st.spinner("Processing ..."):
