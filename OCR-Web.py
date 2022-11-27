@@ -6,7 +6,7 @@ import cv2
 
 col1, col2 = st.columns(2)
 
-st.sidebar.header("Image to Text Conversion")
+st.sidebar.title("Image to Text Conversion")
 st.sidebar.caption("Created by the Okinawan Genealogical Society of Hawaii")
 st.sidebar.header("")  # Add line
 
