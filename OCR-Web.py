@@ -4,7 +4,7 @@ from PIL import Image  # Image Processing
 import numpy as np  # Image Processing
 import cv2
 
-col1, col2, col3 = st.columns(3)
+col1, col2 = st.columns(3)
 
 st.sidebar.subheader("Image to Text Conversion")
 st.sidebar.caption("Created by the Okinawan Genealogical Society of Hawaii")
@@ -65,4 +65,4 @@ if image is not None:
             
     st.sidebar.success("Image File", icon="👇")
 
-    col3.image(input_image)           # display image
+    col2.image(input_image)           # display image
