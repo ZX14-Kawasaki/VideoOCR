@@ -55,7 +55,7 @@ if image is not None:
             bl = (int(bl[0]), int(bl[1]))
 
             input_image = cv2.rectangle(input_image, tl, br, (0, 255, 0), 2)
-            input_image = cv2.putText(input_image, str(cnt), tr, cv2.FONT_HERSHEY_SIMPLEX, 0.7, (0, 0, 0), 2, cv2.LINE_AA)
+            input_image = cv2.putText(input_image, str(cnt), tr, cv2.FONT_HERSHEY_SIMPLEX, 0.7, (0, 255, 0), 2, cv2.LINE_AA)
     st.success("Image File", icon="👇")
 
     st.image(input_image)           # display image
