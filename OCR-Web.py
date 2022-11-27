@@ -8,15 +8,17 @@ st.subheader("Image to Text Conversion")
 st.caption("Created by the Okinawan Genealogical Society of Hawaii")
 add_selectbox = st.selectbox('Select language in Image File',('Japanese', 'Portuguese', 'Spanish'))
 
+st.sidebar.header("")
+
 lang = 'ja'
-if (add_selectbox == 'Japanese'): 
+if (st.sidebar.add_selectbox == 'Japanese'): 
     lang = 'ja'
-elif (add_selectbox == 'Portuguese'): 
+elif st.sidebar.(add_selectbox == 'Portuguese'): 
     lang = 'pt'
-elif (add_selectbox == 'Spanish'): 
+elif (st.sidebar.add_selectbox == 'Spanish'): 
     lang = 'es'
     
-image = st.file_uploader(label="Upload your Image File", type=['png', 'jpg', 'jpeg'])
+image = st.sidebar.file_uploader(label="Upload your Image File", type=['png', 'jpg', 'jpeg'])
 
 @st.cache
 def load_model():
