@@ -10,7 +10,7 @@ st.sidebar.header("Image to Text Conversion")
 st.sidebar.caption("Created by the Okinawan Genealogical Society of Hawaii")
 add_selectbox = st.sidebar.selectbox('Step 1: Select language in Image File',('Japanese', 'Portuguese', 'Spanish'))
 
-#st.sidebar.header("")
+st.sidebar.header("")  # Add line
 
 lang = 'ja'
 if (st.sidebar.add_selectbox == 'Japanese'): 
