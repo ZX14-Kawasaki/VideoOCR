@@ -32,7 +32,7 @@ reader = load_model()
 if image is not None:
     input_image = Image.open(image)  # read image
     input_image = np.array(input_image)
-    st.image(input_image)           # display image
+    col1.image(input_image)           # display image
     
     #dimensions = input_image.shape
     #st.write(dimensions)
@@ -65,4 +65,4 @@ if image is not None:
             
     st.sidebar.success("Image File", icon="👇")
 
-    st.col2.image(input_image)           # display image
+    col2.image(input_image)           # display image
