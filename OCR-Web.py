@@ -4,7 +4,7 @@ from PIL import Image  # Image Processing
 import numpy as np  # Image Processing
 import cv2
 
-col1, col2 = st.columns(3)
+col1, col2 = st.columns(2)
 
 st.sidebar.subheader("Image to Text Conversion")
 st.sidebar.caption("Created by the Okinawan Genealogical Society of Hawaii")
@@ -46,10 +46,10 @@ if image is not None:
             tot = tot + prob
         tot = tot / cnt   
         
-        if (tot >= .75):
-            col1.success("Results", icon="👍")
-        else:
-            col1.success("Results", icon="👎")
+        #if (tot >= .75):
+        #    col1.success("Results", icon="👍")
+        #else:
+        #    col1.success("Results", icon="👎")
         cnt = 0
         for (bbox, text, prob) in result:
             cnt = cnt + 1
