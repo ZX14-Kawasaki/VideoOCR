@@ -8,6 +8,8 @@ col1, col2 = st.columns(2)
 
 st.sidebar.header("Image to Text Conversion")
 st.sidebar.caption("Created by the Okinawan Genealogical Society of Hawaii")
+st.sidebar.header("")  # Add line
+
 add_selectbox = st.sidebar.selectbox('Step 1: Select language in your Image File',('Japanese', 'Portuguese', 'Spanish'))
 
 st.sidebar.header("")  # Add line
