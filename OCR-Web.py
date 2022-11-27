@@ -32,7 +32,7 @@ reader = load_model()
 if image is not None:
     input_image = Image.open(image)  # read image
     input_image = np.array(input_image)
-    sidebar.image(input_image)           # display image
+    st.sidebar.image(input_image)           # display image
     
     #dimensions = input_image.shape
     #st.write(dimensions)
