@@ -53,7 +53,7 @@ if image is not None:
         cnt = 0
         for (bbox, text, prob) in result:
             cnt = cnt + 1
-            fld = cnt.text
+            fld = str(cnt) + text
             col1.write(fld)
             (tl, tr, br, bl) = bbox
             tl = (int(tl[0]), int(tl[1]))
