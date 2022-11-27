@@ -4,6 +4,8 @@ from PIL import Image  # Image Processing
 import numpy as np  # Image Processing
 import cv2
 
+col1, col2 = st.columns(2)
+
 st.subheader("Image to Text Conversion")
 st.caption("Created by the Okinawan Genealogical Society of Hawaii")
 add_selectbox = st.sidebar.selectbox('Step 1: Select language in Image File',('Japanese', 'Portuguese', 'Spanish'))
@@ -27,7 +29,6 @@ def load_model():
 
 reader = load_model()  
 
-col1, col2 = st.columns(2)
 
 if image is not None:
     input_image = Image.open(image)  # read image
