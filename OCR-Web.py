@@ -29,11 +29,10 @@ def load_model():
 
 reader = load_model()  
 
-
 if image is not None:
     input_image = Image.open(image)  # read image
-    st.col1.image(input_image)           # display image
     input_image = np.array(input_image)
+    st.col1.image(input_image)           # display image
     #dimensions = input_image.shape
     #st.write(dimensions)
 
