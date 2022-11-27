@@ -27,7 +27,7 @@ def load_model():
 
 reader = load_model()  
 
-col1, col2 = st.beta_columns(2)
+col1, col2 = st.columns(2)
 
 if image is not None:
     input_image = Image.open(image)  # read image
