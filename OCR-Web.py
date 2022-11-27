@@ -6,7 +6,7 @@ import cv2
 
 st.subheader("Image to Text Conversion")
 st.caption("Created by the Okinawan Genealogical Society of Hawaii")
-add_selectbox = st.sidebar.selectbox('Select language in Image File',('Japanese', 'Portuguese', 'Spanish'))
+add_selectbox = st.sidebar.selectbox('Step 1: Select language in Image File',('Japanese', 'Portuguese', 'Spanish'))
 
 st.sidebar.header("")
 
@@ -18,7 +18,7 @@ elif (st.sidebar.add_selectbox == 'Portuguese'):
 elif (st.sidebar.add_selectbox == 'Spanish'): 
     lang = 'es'
     
-image = st.sidebar.file_uploader(label="Upload your Image File", type=['png', 'jpg', 'jpeg'])
+image = st.sidebar.file_uploader(label="Step 2: Upload your Image File", type=['png', 'jpg', 'jpeg'])
 
 @st.cache
 def load_model():
@@ -27,8 +27,11 @@ def load_model():
 
 reader = load_model()  
 
+col1, col2 = st.beta_columns(2)
+
 if image is not None:
     input_image = Image.open(image)  # read image
+    st.col1.image(input_image)           # display image
     input_image = np.array(input_image)
     #dimensions = input_image.shape
     #st.write(dimensions)
@@ -43,9 +46,9 @@ if image is not None:
         tot = tot / cnt   
         
         if (tot >= .75):
-            st.success("Results", icon="👍")
+            st.sidebar.success("Results", icon="👍")
         else:
-            st.success("Results", icon="👎")
+            st.sidebar.success("Results", icon="👎")
         cnt = 0
         for (bbox, text, prob) in result:
             cnt = cnt + 1
@@ -58,6 +61,7 @@ if image is not None:
 
             input_image = cv2.rectangle(input_image, tl, br, (0, 255, 0), 1)
             input_image = cv2.putText(input_image, str(cnt), tr, cv2.FONT_HERSHEY_SIMPLEX, 0.5, (0, 255, 0), 2, cv2.LINE_AA)
-    st.success("Image File", icon="👇")
+            
+    st.sidebar.success("Image File", icon="👇")
 
-    st.image(input_image)           # display image
+    st.col2.image(input_image)           # display image
