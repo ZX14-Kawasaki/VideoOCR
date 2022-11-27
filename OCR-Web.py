@@ -4,10 +4,10 @@ from PIL import Image  # Image Processing
 import numpy as np  # Image Processing
 import cv2
 
-col1, col2 = st.columns(2)
+col1, col2, col3 = st.columns(3)
 
-st.subheader("Image to Text Conversion")
-st.caption("Created by the Okinawan Genealogical Society of Hawaii")
+st.sidebar.subheader("Image to Text Conversion")
+st.sidebar.caption("Created by the Okinawan Genealogical Society of Hawaii")
 add_selectbox = st.sidebar.selectbox('Step 1: Select language in Image File',('Japanese', 'Portuguese', 'Spanish'))
 
 st.sidebar.header("")
@@ -32,7 +32,7 @@ reader = load_model()
 if image is not None:
     input_image = Image.open(image)  # read image
     input_image = np.array(input_image)
-    col1.image(input_image)           # display image
+    col2.image(input_image)           # display image
     
     #dimensions = input_image.shape
     #st.write(dimensions)
@@ -47,13 +47,13 @@ if image is not None:
         tot = tot / cnt   
         
         if (tot >= .75):
-            st.sidebar.success("Results", icon="👍")
+            col1.success("Results", icon="👍")
         else:
-            st.sidebar.success("Results", icon="👎")
+            col1.success("Results", icon="👎")
         cnt = 0
         for (bbox, text, prob) in result:
             cnt = cnt + 1
-            st.write(cnt, text)
+            col1.write(cnt, text)
             (tl, tr, br, bl) = bbox
             tl = (int(tl[0]), int(tl[1]))
             tr = (int(tr[0]), int(tr[1]))
@@ -65,4 +65,4 @@ if image is not None:
             
     st.sidebar.success("Image File", icon="👇")
 
-    col2.image(input_image)           # display image
+    col3.image(input_image)           # display image
