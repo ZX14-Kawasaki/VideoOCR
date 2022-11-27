@@ -13,7 +13,7 @@ st.sidebar.header("")
 lang = 'ja'
 if (st.sidebar.add_selectbox == 'Japanese'): 
     lang = 'ja'
-elif st.sidebar.add_selectbox == 'Portuguese'): 
+elif (st.sidebar.add_selectbox == 'Portuguese'): 
     lang = 'pt'
 elif (st.sidebar.add_selectbox == 'Spanish'): 
     lang = 'es'
