@@ -32,7 +32,7 @@ reader = load_model()
 if image is not None:
     input_image = Image.open(image)  # read image
     input_image = np.array(input_image)
-    st.sidebar.image(input_image)           # display image
+    #st.sidebar.image(input_image)           # display image
     
     #dimensions = input_image.shape
     #st.write(dimensions)
@@ -63,6 +63,6 @@ if image is not None:
             input_image = cv2.rectangle(input_image, tl, br, (0, 255, 0), 1)
             input_image = cv2.putText(input_image, str(cnt), tr, cv2.FONT_HERSHEY_SIMPLEX, 0.5, (0, 255, 0), 2, cv2.LINE_AA)
             
-    col2.success("Image File", icon="👇")
+    col2.success("Processed Image File", icon="👇")
 
     col2.image(input_image)           # display image
