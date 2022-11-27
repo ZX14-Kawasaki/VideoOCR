@@ -6,11 +6,11 @@ import cv2
 
 col1, col2 = st.columns(2)
 
-st.sidebar.subheader("Image to Text Conversion")
+st.sidebar.header("Image to Text Conversion")
 st.sidebar.caption("Created by the Okinawan Genealogical Society of Hawaii")
 add_selectbox = st.sidebar.selectbox('Step 1: Select language in Image File',('Japanese', 'Portuguese', 'Spanish'))
 
-st.sidebar.header("")
+#st.sidebar.header("")
 
 lang = 'ja'
 if (st.sidebar.add_selectbox == 'Japanese'): 
@@ -34,8 +34,8 @@ if image is not None:
     input_image = np.array(input_image)
     #st.sidebar.image(input_image)           # display image
     
-    #dimensions = input_image.shape
-    #st.write(dimensions)
+    dimensions = input_image.shape
+    st.sidebar.write(dimensions)
 
     with st.spinner("Processing ..."):
         result = reader.readtext(input_image, width_ths=2, height_ths=0)
@@ -47,9 +47,9 @@ if image is not None:
         tot = tot / cnt   
         
         if (tot >= .75):
-            col1.success("Results", icon="👍")
+            col1.success("OCR Results", icon="👍")
         else:
-            col1.success("Results", icon="👎")
+            col1.success("OCR Results", icon="👎")
         cnt = 0
         for (bbox, text, prob) in result:
             cnt = cnt + 1
