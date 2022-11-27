@@ -35,7 +35,8 @@ if image is not None:
     #st.sidebar.image(input_image)           # display image
     
     dimensions = input_image.shape
-    st.sidebar.write(dimensions)
+    fld = "Image Size " + dimensions
+    st.sidebar.write(fld)
 
     with st.spinner("Processing ..."):
         result = reader.readtext(input_image, width_ths=2, height_ths=0)
