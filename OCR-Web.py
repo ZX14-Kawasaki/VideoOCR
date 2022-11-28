@@ -49,7 +49,7 @@ if image is not None:
             tot = tot + prob
         tot = tot / cnt   
         
-        if (tot >= .75):
+        if (tot >= .50):
             col1.success("OCR Results", icon="👍")
         else:
             col1.success("OCR Results", icon="👎")
