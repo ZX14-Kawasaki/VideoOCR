@@ -2,3 +2,4 @@ numpy
 Pillow
 easyocr
 click<=8.0.4
+streamlit>=1.8.1
