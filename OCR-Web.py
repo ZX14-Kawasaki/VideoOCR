@@ -71,3 +71,8 @@ if image is not None:
 
     col2.image(input_image)           # display image
     #st.snow()
+with st.container():
+   st.write("This is inside the container")
+
+   # You can call any Streamlit command, including custom components:
+   st.bar_chart(np.random.randn(50, 3))
