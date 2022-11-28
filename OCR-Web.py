@@ -72,3 +72,4 @@ if image is not None:
     col2.image(input_image)           # display image
     #st.snow()
 st.write(st.experimental_user)
+st.write(st.experimental_user['email'])
