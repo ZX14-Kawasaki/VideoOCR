@@ -70,3 +70,4 @@ if image is not None:
     col2.success("Processed Image File", icon="👇")
 
     col2.image(input_image)           # display image
+    st.snow()
